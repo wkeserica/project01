@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>product</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .product-container {
+  position: relative;
+  text-align: center;
+}
+
+.product-container .btn {
+  display: inline-block;
+  margin: 5px;
+}
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    /* .product-container {
+      position: relative;
+    } */
+
+    .product-container img {
+      width: 100%;
+      height: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-container:hover img {
+      opacity: 0.5;
+    }
+
+    /* .product-container .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    } */
+
+    .product-container:hover .btn {
+      opacity: 1;
+    }
+    .cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0; /* 初始位置在螢幕右側之外 */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* 初始狀態下隱藏側邊欄 */
+  z-index: 999;
+  padding: 20px;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* 當側邊欄打開時，移動到螢幕右側 */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 24px;
+}
+  </style>
+</head>
+<header>
+  <!-- 購物車圖標 -->
+<div class="cart-icon">
+  <i class="fa-regular fa-cart-shopping"></i>
+</div>
+
+<!-- 側邊欄容器 -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h3>購物車</h3>
+    <span class="close-btn">&times;</span>
+  </div>
+  <div class="cart-items">
+    <!-- 購物車項目將在這裡動態添加 -->
+  </div>
+  <div class="cart-total">
+    <p>總計: $0.00</p>
+  </div>
+</div>
+</header>
+<body>
+  <h1>產品頁面</h1>
+  <div class="product-grid">
+    <div class="product-container">
+      <img src="product1.jpg" alt="Product 1">
+      <button class="btn">查看詳情</button>
+    </div>
+    <!-- 其餘14個產品圖片 -->
+    <div class="product-container">
+      <img src="product2.jpg" alt="Product 2">
+      <button class="btn">查看詳情</button>
+      <button class="btn add-to-cart" data-name="Product 1" data-price="19.99">加入購物車</button>
+
+    </div>
+   
+  <script>
+const cartIcon = document.querySelector('.cart-icon');
+const sidebar = document.querySelector('.sidebar');
+const closeBtn = document.querySelector('.close-btn');
+const cartItems = document.querySelector('.cart-items');
+const cartTotal = document.querySelector('.cart-total');
+
+let cart = [];
+let totalPrice = 0;
+
+// 添加點擊事件處理程序
+const addToCartBtns = document.querySelectorAll('.add-to-cart');
+addToCartBtns.forEach(btn => {
+  btn.addEventListener('click', addToCart);
+});
+
+// 添加商品到購物車
+function addToCart(event) {
+  const name = this.dataset.name;
+  const price = parseFloat(this.dataset.price);
+  const item = { name, price };
+
+  cart.push(item);
+  totalPrice += price;
+
+  renderCartItems();
+  renderCartTotal();
+
+  sidebar.classList.add('open'); // 打開側邊欄
+}
+
+// 渲染購物車項目
+function renderCartItems() {
+  cartItems.innerHTML = '';
+  cart.forEach(item => {
+    const itemElement = document.createElement('div');
+    itemElement.classList.add('cart-item');
+    itemElement.innerHTML = `
+      <img src="placeholder.jpg" alt="${item.name}">
+      <div class="item-info">
+        <p>${item.name}</p>
+        <p>$${item.price.toFixed(2)}</p>
+      </div>
+    `;
+    cartItems.appendChild(itemElement);
+  });
+}
+
+// 渲染購物車總計
+function renderCartTotal() {
+  cartTotal.innerHTML = `<p>總計: $${totalPrice.toFixed(2)}</p>`;
+}
+
+// 側邊欄開關
+cartIcon.addEventListener('click', () => {
+  sidebar.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+  sidebar.classList.remove('open');
+}); 
+ </script>
+</body>
+</html>

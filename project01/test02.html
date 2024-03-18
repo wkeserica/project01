@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>登入/註冊</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 400px;
+  margin: 10px;
+  height: 391px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px;
+  background-color: #3a3335;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(123, 120, 116);
+  
+}
+
+#error-message, #register-error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.social-login {
+  margin-top: 20px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-btn {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
+
+.google-btn {
+  background-color: #DB4437;
+}
+
+.facebook-btn {
+  background-color: #3B5998;
+}
+
+.line-btn {
+  background-color: #00C300;
+}
+
+.register-button{
+    position: relative;
+    bottom: 20px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h1>登入</h1>
+      <form id="login-form">
+        <label for="username">使用者名稱:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">密碼:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">登入</button>
+      </form>
+      <div id="error-message"></div>
+      <div class="social-login">
+        <h3>或使用以下登入：</h3>
+        <div class="social-buttons">
+          <button class="social-btn google-btn">Google</button>
+          <button class="social-btn facebook-btn">Facebook</button>
+          <button class="social-btn line-btn">LINE</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-container">
+      <h1>註冊新帳號</h1>
+      <form id="register-form">
+        <label for="new-username">使用者名稱:</label>
+        <input type="text" id="new-username" name="new-username" required>
+        <label for="new-password">密碼:</label>
+        <input type="password" id="new-password" name="new-password" required>
+        <label for="confirm-password">確認密碼:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <button type="submit" class="register-buttom">註冊</button>
+      </form>
+      <div id="register-error-message"></div>
+    </div>
+  </div>
+</body>
+</html>

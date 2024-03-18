@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+body{
+  margin: 0;
+  background-color:#edebeb80;
+}
+/* header */
+header{
+  color: aliceblue;
+  background-color: #3a3335;
+  height: 80px;
+}
+.container{
+  margin: 0px;
+ }
+
+.float-left{
+  float:left
+}
+.float-right{
+  float: right;
+}
+*{
+  box-sizing: border-box;
+}
+
+.logo-size{
+  display: block;
+  height: 65px;
+  width: 65px;
+  margin: 10px;
+  margin-left: 0;
+}
+nav{
+  width: 40%;
+  text-align: right;
+  margin:10px;
+}
+
+.navbar {
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+  top: 12px;
+  border-right:inset 2px rgb(209, 200, 200);
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+  
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin-top: 12px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  color:rgb(177, 171, 162);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+.login-icon a{
+  position: relative;
+  display: block;
+  font-size: 25px;
+}
+/* header end */
+/* footer */
+footer{
+  padding:20px;
+  color: aliceblue;
+  background-color:#3a3335;
+
+}
+.pagetop{
+  position: fixed;
+  display: block; /*塊級元素*/
+  right: 10px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px; /*行高150% 180%*/
+  text-decoration: none;
+  color: #3a3335;
+  border-radius: 50%;
+  background-color:#9b9496;
+}
+
+.social-icon{
+  margin: 10px;
+}
+.social-icon a{
+  color:gray;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.icon-facebook:hover{
+  color: #4267b2;
+}
+.icon-youtube:hover{
+  color: #FF0000;
+}
+.icon-instagram:hover{
+  color: #E1306C;
+}
+/* footer end */
+/* 輪播 */
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+/* 新聞頁面 */
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 2px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* 戰績表 */
+h2{
+  text-align:center;
+}
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #dddddd;
+  border-bottom: #3a3335;
+}
+th, td {
+  border-bottom: 1px solid #3a3335;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #3b3939;
+  color: #d8d7d7;
+}
+.teamlogo-size{
+  float: left;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin-right: 7px;
+}
+.w-80{
+  width: 80%;
+  /* display: flex; */
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.container::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+/* 購物車及側邊欄 */
+.cart-icon {
+  position: relative;
+  font-size: 25px;
+  cursor: pointer;
+  top: 26px;
+  right: 10px;
+}
+.cart-icon:hover{
+  color:rgb(177, 171, 162);
+}
+
+.sidebar {
+  position: fixed;
+  top: 80px;
+  right: 0; /* 初始位置在螢幕右側之外 */
+  width: 300px;
+  height: 100%;
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* 初始狀態下隱藏側邊欄 */
+  z-index: 999;
+  padding: 20px;
+  color: #1c1c1c;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* 當側邊欄打開時，移動到螢幕右側 */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+
+</style>
+
+</head>
+<body>
+  
+
+<header>
+  <div class="container">
+    <a href="index.html"><img src="image/pleague_logo_fullname.png" alt="pleague-logo" class="float-left logo-size"></img></a>
+    <div class="navbar">
+          <a href="about.html">關於聯盟</a>
+          <a href="product.html">聯盟商品</a>
+          <div class="dropdown">
+              <button class="dropbtn" onclick="myFunction()">球隊資訊
+               <i class="fa fa-caret-down"></i>
+              </button>
+                  <div class="dropdown-content" id="myDropdown">
+                      <a href="https://pleagueofficial.com/team/6">新北國王</a>
+                      <a href="https://pleagueofficial.com/team/1">台北富邦勇士</a>
+                      <a href="https://pleagueofficial.com/team/4">福爾摩沙夢想家</a>
+                      <a href="https://pleagueofficial.com/team/2">桃園璞園領航員</>
+                      <a href="https://pleagueofficial.com/team/3">新竹御頂攻城獅</a>
+                      <a href="https://pleagueofficial.com/team/5">高雄17直播鋼鐵人</a>
+                  </div>
+          </div> 
+          <!-- login 圖標 -->
+          <div class="float-right login-icon">
+            <a href="login.html"><i class="fa-regular fa-user"></i></a>
+            </div>  
+            <!-- 購物車圖標 -->
+            <div class="float-right cart-icon">
+            <i class="fa-regular fa-cart-shopping"></i>
+            </div>
+        </div>
+
+  </div>  
+  <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+  </script>
+         
+  <!-- 側邊欄容器 -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h3>購物車</h3>
+    <span class="close-btn">&times;</span>
+  </div>
+  <div class="cart-items">
+    <!-- 購物車項目將在這裡動態添加 -->
+  </div>
+  <div class="cart-total">
+    <p>總計: $0.00</p>
+  </div>
+</div>
+  <script>
+    const cartIcon = document.querySelector('.cart-icon');
+    const sidebar = document.querySelector('.sidebar');
+    const closeBtn = document.querySelector('.close-btn');
+
+    cartIcon.addEventListener('click', () => {
+      sidebar.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+    });
+  </script>      
+
+
+</header>
+<!-- 輪播 -->
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <a href="about.html"><img src="image/photo_119_1699416292-2.png" style="width:100%"></a>
+  </div>
+  
+  <div class="mySlides fade">
+    <a href="product.html"><img src="image/photo_122_1700283904.jpg" style="width:100%"></a>
+  </div>
+  
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+  
+  <script>
+  let slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+  </script>
+ 
+<!-- 戰績表 -->
+<div>
+<h2>Standings&Rankings</h2>
+<table class="w-80">
+  <thead>
+      <tr>
+          <th>名次</th>
+          <th>隊伍 TEAM</th>
+          <th>已賽 GP</th>
+          <th>勝 W</th>
+          <th>敗 L</th>
+          <th>勝率 PCT</th>
+          <th>勝差</th>
+          <th>連勝連敗</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><img src="image/logo_dreamers.png" alt="" class="teamlogo-size">福爾摩沙夢想家</td>
+          <td>23</td>
+          <td>16</td>
+          <td>7</td>  
+          <td>70%</td>
+          <td>0</td>
+          <td>W3</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><img src="image/logo_kings.png" alt="" class="teamlogo-size">新北國王</td>
+          <td>23</td>
+          <td>13</td>
+          <td>10</td>
+          <td>57%</td>
+          <td>3</td>
+          <td>L4</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><img src="image/logo_pilots.png" alt="" class="teamlogo-size">桃園璞園領航員</td>
+          <td>23</td>
+          <td>12</td>
+          <td>11</td>
+          <td>52%</td>
+          <td>4</td>
+          <td>L1</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td><img src="image/logo_braves.png" alt="" class="teamlogo-size">台北富邦勇士</td>
+          <td>23</td>
+          <td>11</td>
+          <td>12</td>
+          <td>48%</td>
+          <td>5</td>
+          <td>L2</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td><img src="image/logo_lioneers.png" alt="" class="teamlogo-size">新竹御頂攻城獅</td>
+          <td>21</td>
+          <td>10</td>
+          <td>11</td>
+          <td>48%</td>
+          <td>5</td>
+          <td>L1</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td><img src="image/logo_steelers.png" alt="" class="teamlogo-size">高雄17直播鋼鐵人</td>
+          <td>23</td>
+          <td>6</td>
+          <td>17</td>
+          <td>26%</td>
+          <td>10</td>
+          <td>L2</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+<!-- 新聞頁面 -->
+<h2>NEWS</h2>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="https://pleagueofficial.com/news-detail/639">
+      <img src="image/img07.png" alt="Cinque Terre">
+    </a>
+    <div class="desc">勇士林志傑「野獸三分彈」率隊3連勝戰績重回前三 獲選2023-24球季Porsche 01月最有價值</div>
+  </div>
+</div>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="https://pleagueofficial.com/news-detail/641">
+      <img src="image/Ly9kMzZmeXBrYm1tb2d6Ni5jbG91ZGZyb250Lm5ldC91cGxvYWQvbmV3cy9waG90b182NDFfMTcwODkyNDYyOS5qcGc=.png" alt="圖片">
+    </a>
+    <div class="desc">NBA冠軍長人奧帝重返新北國王，強化陣容變化尋找最佳洋將組合</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="https://pleagueofficial.com/news-detail/648">
+      <img src="image/Ly9kMzZmeXBrYm1tb2d6Ni5jbG91ZGZyb250Lm5ldC91cGxvYWQvbmV3cy9waG90b182NDhfMTcwOTE4NTAzMy5qcGc=.png" alt="Northern Lights">
+    </a>
+    <div class="desc">「Audi 主題週 - 雄孩子出沒」親子主題週 推出球員Q版應援商品</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="https://pleagueofficial.com/news-detail/644">
+      <img src="image/Ly9kMzZmeXBrYm1tb2d6Ni5jbG91ZGZyb250Lm5ldC91cGxvYWQvbmV3cy9waG90b182NDRfMTcwOTAwMzkzMC5qcGc=.png" alt="Mountains">
+    </a>
+    <div class="desc">「火曜GO雄班」上班主題日 回饋上班族現場購票買一送一</div>
+  </div>
+</div>
+  
+
+  <div class="container social-icon">  
+    <a class="icon-youtube" href="https://www.youtube.com/c/PLEAGUEofficial/featured"><i class="fa-brands fa-youtube"></i></a>
+    <a class="icon-instagram" href="https://www.instagram.com/p.league.official/?fbclid=IwAR0N6N2QygJvYA53GmHf6D9aPG4gpik4bIfUot5WNij0rWmOkJe8EiqaPBk"><i class="fa-brands fa-instagram"></i></a>
+    <a class="icon-facebook" href="https://www.facebook.com/PLEAGUE.official"><i class="fa-brands fa-facebook"></i></a>  
+  </div>
+  
+  <footer>
+    <a href="#" class="pagetop">TOP</a>
+        <div class="container">
+            <p>copyright &copy; 2024 課程練習 不作為商業使用</p>
+        </div>
+</footer>
+</body>
+</html>

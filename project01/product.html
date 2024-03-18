@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+body{
+  margin: 0;
+  background-color:#edebeb80;
+}
+h1{
+  text-align: center;
+  color: #1c1c1c;
+}      
+.container::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+header{
+  color: aliceblue;
+  background-color: #3a3335;
+  height: 80px;
+  margin: 0;
+}
+.container{
+  margin: 10px;
+ }
+
+.float-left{
+  float:left
+}
+.float-right{
+  float: right;
+}
+*{
+  box-sizing: border-box;
+}
+
+.logo-size{
+  display: block;
+  height: 65px;
+  width: 65px;
+  margin: 10px;
+  margin-left: 0;
+}
+nav{
+  width: 40%;
+  text-align: right;
+  margin:0px;
+}
+
+.navbar {
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+  top: 12px;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+  
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin-top: 12px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  color:rgb(177, 171, 162);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+.login-icon a{
+  position: relative;
+  display: block;
+  font-size: 25px;
+}
+/* header end */
+/* footer */
+footer{
+  padding:20px;
+  color: aliceblue;
+  background-color:#3a3335;
+}
+.pagetop{
+  position: fixed;
+  display: block; /*塊級元素*/
+  right: 10px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px; /*行高150% 180%*/
+  text-decoration: none;
+  color: #3a3335;
+  border-radius: 50%;
+  background-color:#9b9496;
+}
+
+.social-icon{
+  margin: 10px;
+}
+.social-icon a{
+  color:gray;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.icon-facebook:hover{
+  color: #4267b2;
+}
+.icon-youtube:hover{
+  color: #FF0000;
+}
+.icon-instagram:hover{
+  color: #E1306C;
+}
+/* 商品 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-container {
+  position: relative;
+}
+
+.product-container img {
+  width: 100%;
+  height: auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-container:hover img {
+  opacity: 0.5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-container .btn {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.product-container .btn:hover{
+  background-color: rgba(58, 57, 57, 0.5);
+}
+
+.product-container:hover .btn {
+  opacity: 1;
+}
+
+
+.product-container p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.product-container p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.prize-content{
+  color: #1c1c1c;
+  font-weight: bold;
+}
+/* 麵包屑樣式 start */
+.bg-gray{
+   background-color:rgb(245, 241, 236);
+   padding: 10px 0px;
+}
+/* 後代選取器 空白鍵 */
+/* 子代選取器 > */
+.breadcrumb ol{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.breadcrumb ol li{
+  float: left;
+}
+.breadcrumb ol li+li::before{
+/* 相鄰選取器 在兄弟的弟前面加入斜線 */
+  content: "\00a0>\00a0";
+  /*css特殊符號\00a0 */
+}
+.breadcrumb a{
+  text-decoration: none;
+  color: rgb(124, 124, 124);
+}
+.breadcrumb a:hover{
+  color:black;
+}
+/* 頁碼 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a.active {
+  background-color:#3a3335;
+  color: white;
+  border: 1px solid#3a3335;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+/* 購物車及側邊欄 */
+.cart-icon {
+  position: relative;
+  font-size: 25px;
+  cursor: pointer;
+  top: 26px;
+  right: 10px;
+}
+.cart-icon:hover{
+  color:rgb(177, 171, 162);
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  right: 0; /* 初始位置在螢幕右側之外 */
+  width: 300px;
+  height: 100%;
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* 初始狀態下隱藏側邊欄 */
+  z-index: 999;
+  padding: 20px;
+  color: #1c1c1c;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* 當側邊欄打開時，移動到螢幕右側 */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 24px;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 60px; /* 調整圖片寬度 */
+  height: 60px; /* 調整圖片高度 */
+  object-fit: cover; /* 確保圖片不失真 */
+  margin-right: 10px;
+}
+
+.cart-item .item-info {
+  flex-grow: 1;
+}
+
+.cart-item .item-info p {
+  margin: 0;
+}
+
+
+</style>
+</head>
+<body>
+  
+
+<header>
+  <div class="container">
+    <a href="index.html"><img src="image/pleague_logo_fullname.png" alt="pleague-logo" class="float-left logo-size"></img></a>
+    <div class="navbar">
+          <a href="about.html">關於聯盟</a>
+          <a href="product.html">聯盟商品</a>
+          <div class="dropdown">
+              <button class="dropbtn" onclick="myFunction()">球隊資訊
+               <i class="fa fa-caret-down"></i>
+              </button>
+                  <div class="dropdown-content" id="myDropdown">
+                      <a href="https://pleagueofficial.com/team/6">新北國王</a>
+                      <a href="https://pleagueofficial.com/team/1">台北富邦勇士</a>
+                      <a href="https://pleagueofficial.com/team/4">福爾摩沙夢想家</a>
+                      <a href="https://pleagueofficial.com/team/2">桃園璞園領航員</a>
+                      <a href="https://pleagueofficial.com/team/3">新竹御頂攻城獅</a>
+                      <a href="https://pleagueofficial.com/team/5">高雄17直播鋼鐵人</a>
+                  </div>
+          </div> 
+          <!-- login 圖標 -->
+          <div class="float-right login-icon">
+          <a href="login.html"><i class="fa-regular fa-user"></i></a>
+          </div>  
+          <!-- 購物車圖標 -->
+          <div class="float-right cart-icon">
+          <i class="fa-regular fa-cart-shopping"></i>
+          </div>
+  <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+        }
+      }
+  </script>
+
+
+<!-- 側邊欄容器 -->
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h3>購物車</h3>
+    <span class="close-btn">&times;</span>
+  </div>
+  <div class="cart-items">
+    <!-- 購物車項目將在這裡動態添加 -->
+  </div>
+  <div class="cart-total">
+    <p>總計: $0.00</p>
+  </div>
+</div>
+    
+
+</header>
+    <!-- 麵包屑 breadcrumb start 有序列表 -->
+    <div class="bg-gray breadcrumb">
+      <div class="container">
+          <ol>
+              <li><a href="index.html">首頁</a></li>
+              <li>聯盟商品</li>
+          </ol>
+      </div>
+  </div>
+  <!-- 麵包屑 breadcrumb end -->
+<h1>所有商品</h1>
+<div class="container">
+<div class="product-grid">
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/131">
+    <img src="image/product01.png" alt="Product 1" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="XAP x P.-LEAGUE+-吊卡收藏玩具" data-price="4800" data-image="image/product01.png">加入購物車</button>
+    <p>XAP x P.-LEAGUE+-吊卡收藏玩具</p>
+    <p class="prize-content">NTD$4,800</p>
+  </div>
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/47">
+    <img src="image/product13.jpeg" alt="Product 2" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="元年限定球褲 四隊聯名版(白)" data-price="1200" data-image="image/product13.jpeg">加入購物車</button>
+    <p>元年限定球褲 四隊聯名版(白)</p>
+    <p class="prize-content">NTD$1,200</p>
+  </div>
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/166">
+    <img src="image/product03.jpeg" alt="Product 3" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="Oh my PLG布章帽Tee" data-price="2800" data-image="image/product03.jpeg">加入購物車</button>
+    <p>Oh my PLG布章帽Tee</p>
+    <p class="prize-content">NTD$2,800</p>
+  </div>
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/182">
+    <img src="image/product04.jpeg" alt="Product 4" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="PLG小Ｐ抱枕" data-price="520" data-image="image/product04.jpeg">加入購物車</button>
+    <p>PLG小Ｐ抱枕</p>
+    <p class="prize-content">NTD$520</p>
+  </div>
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/94">
+    <img src="image/product05.jpeg" alt="Product 5" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="PLG休閒工裝短褲" data-price="1480" data-image="image/product05.jpeg">加入購物車</button>
+    <p>PLG休閒工裝短褲</p>
+    <p class="prize-content">NTD$1,480</p>
+  </div>
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/22">
+    <img src="image/product06.jpeg" alt="Product 6" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="PLUS 專業運動襪 PRO SOCKS" data-price="280" data-image="image/product06.jpeg">加入購物車</button>
+    <p>PLUS 專業運動襪 PRO SOCKS</p>
+    <p class="prize-content">NTD$280</p>
+  </div>
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/190">
+    <img src="image/product07.jpeg" alt="Product 7" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="Mitchell _ NessxPLGxTAIPEI FUBON BRAVES 2023冠軍紀念T" data-price="980" data-image="image/product07.jpeg">加入購物車</button>
+    <p>Mitchell _ NessxPLGxTAIPEI FUBON BRAVES <br>2023冠軍紀念T</p>
+    <p class="prize-content">NTD$980</p>
+  </div> 
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/119">
+    <img src="image/product08.jpeg" alt="Product 8" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="Mitchell & NessxPLGxTAIPEI FUBON BRAVES 2022冠軍紀念T" data-price="980" data-image="image/product08.jpeg">加入購物車</button>
+    <p>Mitchell & NessxPLGxTAIPEI FUBON BRAVES<br>2022冠軍紀念T</p>
+    <p class="prize-content">NTD$980</p>
+  </div> 
+  
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/185">
+    <img src="image/product09.jpeg" alt="Product 9" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="PLG 2023 PLAYOFFS_ALL MY PLG短Tee" data-price="880" data-image="image/product09.jpeg">加入購物車</button>
+    <p>PLG 2023 PLAYOFFS_ALL MY PLG短Tee</p>
+    <p class="prize-content">NTD$880</p>
+  </div>  
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/184">
+    <img src="image/product10.jpeg" alt="Product 10" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="PLG綁式頭帶_視覺款" data-price="450" data-image="image/product10.jpeg">加入購物車</button>
+    <p>PLG綁式頭帶_視覺款</p>
+    <p class="prize-content">NTD$450</p>
+  </div>  
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/44">
+    <img src="image/product11.jpeg" alt="Product 11" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="元年限定球衣 四隊聯名版(黑)" data-price="1500" data-image="image/product11.jpeg">加入購物車</button>
+    <p>元年限定球衣 四隊聯名版(黑)</p>
+    <p class="prize-content">NTD$1,500</p>
+  </div>   
+
+  <div class="product-container"> 
+    <a href="https://pleagueofficial.com/product-item/45">
+    <img src="image/product12.jpeg" alt="Product 12" class="product-image">
+    </a>
+    <button class="btn add-to-cart" data-name="元年限定球衣 四隊聯名版(白)" data-price="1500" data-image="image/product12.jpeg">加入購物車</button>
+    <p>元年限定球衣 四隊聯名版(白)</p>
+    <p class="prize-content">NTD$1,500</p>
+  </div>   
+
+<script>
+  const cartIcon = document.querySelector('.cart-icon');
+  const sidebar = document.querySelector('.sidebar');
+  const closeBtn = document.querySelector('.close-btn');
+  const cartItems = document.querySelector('.cart-items');
+  const cartTotal = document.querySelector('.cart-total');
+
+  let cart = [];
+  let totalPrice = 0;
+
+  // 添加點擊事件處理程序
+  const addToCartBtns = document.querySelectorAll('.add-to-cart');
+  addToCartBtns.forEach(btn => {
+    btn.addEventListener('click', addToCart);
+  });
+
+  // 添加商品到購物車
+  function addToCart(event) {
+    const name = this.dataset.name;
+    const price = parseFloat(this.dataset.price);
+    const image = this.dataset.image;
+    const item = { name, price, image };
+
+    cart.push(item);
+    totalPrice += price;
+
+    renderCartItems();
+    renderCartTotal();
+
+    sidebar.classList.add('open'); // 打開側邊欄
+  }
+
+  // 渲染購物車項目
+  function renderCartItems() {
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+      const itemElement = document.createElement('div');
+      itemElement.classList.add('cart-item');
+      itemElement.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <div class="item-info">
+          <p>${item.name}</p>
+          <p>$${item.price.toFixed(2)}</p>
+        </div>
+      `;
+      cartItems.appendChild(itemElement);
+    });
+  }
+
+  // 渲染購物車總計
+  function renderCartTotal() {
+    cartTotal.innerHTML = `<p>總計: $${totalPrice.toFixed(2)}</p>`;
+  }
+
+  // 側邊欄開關
+  cartIcon.addEventListener('click', () => {
+    sidebar.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+  });
+</script>
+
+</div>
+<div class="pagination">
+  <a href="product.html" class="active">1</a>
+  <a href="product02.html">2</a>
+  <a href="product03.html">3</a>
+  <a href="product04.html">4</a>
+</div>
+
+  <a href="#" class="pagetop">TOP</a>
+  <div class="container social-icon">  
+    <a class="icon-youtube" href="https://www.youtube.com/c/PLEAGUEofficial/featured"><i class="fa-brands fa-youtube"></i></a>
+    <a class="icon-instagram" href="https://www.instagram.com/p.league.official/?fbclid=IwAR0N6N2QygJvYA53GmHf6D9aPG4gpik4bIfUot5WNij0rWmOkJe8EiqaPBk"><i class="fa-brands fa-instagram"></i></a>
+    <a class="icon-facebook" href="https://www.facebook.com/PLEAGUE.official"><i class="fa-brands fa-facebook"></i></a>  
+  </div>
+  
+  <footer>
+        <div class="container">
+            <p>copyright &copy; 2024 課程練習 不作為商業使用</p>
+        </div>
+</footer>
+</body>
+</html>

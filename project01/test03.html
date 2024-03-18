@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>品牌故事</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+/* 導入字體 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* 重置樣式並設置基本樣式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* 頭部導航樣式 */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header nav .logo img {
+  max-height: 50px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-left: 2rem;
+}
+
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #666;
+}
+
+header nav .menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+/* 主要內容區域樣式 */
+main {
+  padding-top: 80px;
+}
+
+.hero {
+  background-image: url('hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.brand-story {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.story-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.story-image {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.story-image img:hover {
+  transform: scale(1.1);
+}
+
+.brand-values {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-item {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-10px);
+}
+
+.value-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* 頁腳樣式 */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 4rem 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ccc;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* 響應式樣式 */
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
+  }
+
+  header nav .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .brand-story,
+  .brand-values {
+    flex-direction: column;
+  }
+
+  .story-content,
+  .story-image {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-item {
+    max-width: 400px;
+    margin: 0 auto 2rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 3rem;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#"><img src="logo.png" alt="Brand Logo"></a>
+      </div>
+      <ul>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">品牌故事</a></li>
+        <li><a href="#">產品</a></li>
+        <li><a href="#">聯繫我們</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>探索我們的故事</h1>
+        <p>了解我們的歷史和理念</p>
+        <a href="#brand-story" class="btn">了解更多</a>
+      </div>
+    </section>
+
+    <section class="brand-story" id="brand-story">
+      <div class="story-content">
+        <h2>我們的起源</h2>
+        <p>在這裡描述您品牌的起源故事...</p>
+        <a href="#" class="btn">了解更多</a>
+      </div>
+      <div class="story-image">
+        <img src="brand-story-image.jpg" alt="Brand Story Image">
+      </div>
+    </section>
+
+    <section class="brand-values">
+      <h2>我們的核心價值</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <img src="value-icon-1.png" alt="Value Icon 1">
+          <h3>價值一</h3>
+          <p>描述您的第一個核心價值...</p>
+        </div>
+        <div class="value-item">
+          <img src="value-icon-2.png" alt="Value Icon 2">
+          <h3>價值二</h3>
+          <p>描述您的第二個核心價值...</p>
+        </div>
+        <div class="value-item">
+          <img src="value-icon-3.png" alt="Value Icon 3">
+          <h3>價值三</h3>
+          <p>描述您的第三個核心價值...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script>
+    // 切換導航菜單
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelectorAll('header nav ul li a');
+
+menuToggle.addEventListener('click', () => {
+  const nav = document.querySelector('header nav ul');
+  nav.classList.toggle('show');
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.querySelector('header nav ul');
+    nav.classList.remove('show');
+  });
+});
+  </script>
+</body>
+</html>
